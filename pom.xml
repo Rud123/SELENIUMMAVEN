@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>Maven</groupId>
+	<artifactId>SeleniumMaven</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<name>SeleniumMaven</name>
+	<!-- FIXME change it to the project's website -->
+	<url>http://www.example.com</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+	</properties>
+
+	<dependencies>
+		<dependency><!-- selenium jars -->
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>4.9.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.testng</groupId><!-- testNG jars -->
+			<artifactId>testng</artifactId>
+			<version>7.7.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>io.github.bonigarcia</groupId><!-- webdrivermanager jars -->
+			<artifactId>webdrivermanager</artifactId>
+			<version>5.3.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId><!-- extent reports jars -->
+			<version>5.0.9</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>5.2.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>5.2.3</version>
+		</dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.7.1</version>
+            <scope>compile</scope>
+        </dependency>
+
+
+    </dependencies>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId> <!-- surefire plugin -->
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>3.1.0</version>
+					<configuration>
+						<suiteXmlFiles>
+							<!-- testng.xml if we want to give a hardcode name of xml and its 
+								present in default location that is at project level <suiteXmlFile>testng.xml</suiteXmlFile> -->
+							<!-- testng.xml if we have multiple xml and its present in other location 
+								that is not at project level </suiteXmlFile> command to run it will be mvn 
+								clean test -DsuiteXmlFile=testng (xml file name) -->
+							<suiteXmlFile>src/test/resources/testngXML/${suiteXmlFile}.xml</suiteXmlFile>
+						</suiteXmlFiles>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>8</source>
+					<target>8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<!-- <profiles> <profile> <id>smoke</id> <build> <pluginManagement> <plugins> 
+		<plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-surefire-plugin</artifactId> 
+		<version>3.1.0</version> <configuration> <suiteXmlFiles> <suiteXmlFile>smoke.xml</suiteXmlFile> 
+		</suiteXmlFiles> </configuration> </plugin> </plugins> </pluginManagement> 
+		</build> </profile> <profile> <id>regression</id> <build> <pluginManagement> 
+		<plugins> <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-surefire-plugin</artifactId> 
+		<version>3.1.0</version> <configuration> <suiteXmlFiles> <suiteXmlFile>smoke.xml</suiteXmlFile> 
+		</suiteXmlFiles> </configuration> </plugin> </plugins> </pluginManagement> 
+		</build> </profile> </profiles> -->
+</project>
+
+
