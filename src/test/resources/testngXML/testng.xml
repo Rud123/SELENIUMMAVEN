@@ -8,6 +8,8 @@
 		<classes>
 			<class name="facebookLogin.login">	</class>
 			
+			
+			<!--  -->
 				<!--	<parameter name="browser" value="chrome" />
 				<parameter name="url" value="https://www.facebook.com/" />
 		
