@@ -6,11 +6,11 @@
 	</listeners>
 	<test name="Test">
 		<classes>
-			<class name="facebookLogin.login">
-				<parameter name="browser" value="chrome" />
+			<class name="facebookLogin.login">	</class>
+				<!--	<parameter name="browser" value="chrome" />
 				<parameter name="url" value="https://www.facebook.com/" />
-			</class>
-			<!-- <class name="samples.test"> <parameter name="browser" value="chrome" 
+		
+			 <class name="samples.test"> <parameter name="browser" value="chrome" 
 				/> <parameter name="url" value="https://www.facebook.com/" /> </class> -->
 		</classes>
 	</test>
