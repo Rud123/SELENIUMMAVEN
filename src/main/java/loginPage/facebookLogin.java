@@ -53,6 +53,8 @@ public class facebookLogin {
 			ExcelData.write_CellData("loginInfo", 1, 2, pname);//row with index 1 and col or cell with index 2
 			ExcelData.write_CellData("fetchedData", 1, 0, pname);//row with index 1 and col or cell with index 0
 			System.out.println("login success");
+			System.out.println("login success");
+			System.out.println("login success");
 			return true;
 		} else {
 			System.out.println("login failed");
